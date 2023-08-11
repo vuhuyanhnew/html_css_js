@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành 3</title>
+</head>
+<body>
+    <div id="about-page">
+        <h1  class="heading" style="margin-bottom: 0px">About Us Page</h1>
+        <div class="heading">Some text of who we are and what we do</div>
+        <div class="heading">Resize the browser window to see that this page is responsive by the way</div>
+    </div>
+    <div id="about-team">
+        <h1 align="center"> Our team</h1>
+        <div class="team">
+        <div class="member">
+            <img src="https://scontent.fhan18-1.fna.fbcdn.net/v/t1.15752-9/363744890_6347702275324910_670845380496479464_n.jpg?_nc_cat=102&cb=99be929b-59f725be&ccb=1-7&_nc_sid=ae9488&_nc_ohc=3vo1Da0QtBEAX-S0jR3&_nc_ht=scontent.fhan18-1.fna&oh=03_AdTb8b0VkV5m5_y2Pm7IRpEh5BjAdHUOP6JeK5GiqayEjg&oe=64FD7A1C">
+            <h2>Jane Doe</h2>
+            <label class="job"> CEO & Founder</label> <br>
+            <div>Some text that describes me</div><br>
+            <div>Iorem ipsum ipsum lorem</div>
+            <br>
+            <div>jane@example.com</div>
+            <input type="button" value="Contact" class="contact">
+        </div>
+        <div class="member">
+            <img src="https://scontent.fhan18-1.fna.fbcdn.net/v/t1.15752-9/363784638_1249757862386910_3624945521760074645_n.jpg?_nc_cat=101&cb=99be929b-59f725be&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=Oue7zIz_MQkAX_kScVP&_nc_ht=scontent.fhan18-1.fna&oh=03_AdR9ZrEMSGqboyG2oEusqVu2397gFNU_iUWmazv_4_Juqw&oe=64FD6EF4">
+            <h2>Mike Ross</h2>
+            <label class="job">Art Director</label>
+            <div>Some text that describes me</div><br>
+            <div>Iorem ipsum ipsum lorem</div>
+            <br>
+            <div>mike@example.com</div>
+            <input type="button" value="Contact" class="contact">
+        </div>
+        <div class="member">
+            <img src="https://scontent.fhan18-1.fna.fbcdn.net/v/t1.15752-9/363882109_1416822609111911_6956632805553194984_n.jpg?_nc_cat=102&cb=99be929b-59f725be&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=9rNJ3QO53pUAX8WSeyd&_nc_ht=scontent.fhan18-1.fna&oh=03_AdT3O8ApMcUzINK_5oGFFdM8_rq6PGx26kpaP6u92pYbvQ&oe=64FD985B">
+            <h2>Jane Doe</h2>
+            <label class="job">Designer</label>
+            <div>Some text that describes me</div><br>
+            <div>Iorem ipsum ipsum lorem</div>
+            <br>
+            <div>john@example.com</div>
+            <input type="button" value="Contact" class="contact">
+        </div>
+        </div>
+    </div>
+</body>
+<style>
+    *{
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    #about-page{
+         
+        color: white;
+        height: 200px;
+        background-color: rgb(125, 135, 136);
+
+    }
+    .heading{
+        padding-top: 20px;
+        text-align: center;
+    }
+    .team{
+        display: grid;
+        grid-template-columns: repeat(3, 300px);
+        grid-gap: 100px;
+        justify-content: center;
+        
+    }
+    .member{
+        box-shadow: 0px 0px 10px 1px grey;
+        
+    }
+    img{
+        width: 100%;
+    }
+    .job{
+        color: grey;
+
+    }
+    .contact{
+        color: white;
+        background-color: black;
+        width: 100%;
+        height: 35px;
+    }
+</style>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành 2</title>
+</head>
+
+<body>
+    <div id="head">
+        <h1 align="center" style="padding-top: 20px;">My Website</h1>
+        <h3 align="center">A website created by me</h3>
+    </div>
+    <div id="head-link">
+        <a class="link">Link</a>
+        <a class="link">Link</a>
+        <a class="link">Link</a>
+    </div>
+    <div id="main">
+        <div id="side-content" style="background-color: rgb(235, 231, 231);">
+            <h3>About me</h3>
+
+            <h4>Photo of me:</h4>
+            <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg"
+                alt="Image" style="height:200px;"> <br>
+            <label>Some text about me</label> <br>
+            <h4>More text</h4>
+            <label>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</label>
+            <div class="fakeimg" style="height:60px;">Image</div><br>
+            <div class="fakeimg" style="height:60px;">Image</div><br>
+            <div class="fakeimg" style="height:60px;">Image</div>
+        </div>
+
+        <div id="main-content">
+            <h3>TITLE HEADING</h3>
+            <h4>Title description, Dec 7, 2023</h4>
+            <div class="fakeimg" style="height: 200px;">Image</div>
+            <label>Some text...</label>
+            <label>Fugit, architecto similique a id deserunt culpa, exercitationem, quia fugiat aspernatur perspiciatis
+                ex! Enim consequatur nisi modi facilis magni est rem provident.</label>
+
+            <h3>TITLE HEADING</h3>
+            <h4>Title description, Sep 2, 2023</h4>
+            <div class="fakeimg" style="height: 200px;">Image</div>
+            <label>Some text...</label>
+            <label>Fugit, architecto similique a id deserunt culpa, exercitationem, quia fugiat aspernatur perspiciatis
+                ex! Enim consequatur nisi modi facilis magni est rem provident.</label>
+
+        </div>
+    </div>
+    <div id="footer">Footer</div>
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    #head {
+        color: white;
+        background-color: #1abc9c;
+        height: 150px;
+    }
+
+    #head-link {
+        color: white;
+        background-color: black;
+    }
+
+    .link {
+        margin-right: 15px;
+    }
+
+    #main {
+        height: 700px;
+    }
+
+    #footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        background-color: rgb(202, 201, 201);
+    }
+
+    #side-content {
+        height: 100%;
+        width: 30%;
+        float: left;
+    }
+
+    #main-content {
+        height: 100%;
+        width: 70%;
+        float: right;
+    }
+
+    .fakeimg {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+    }
+</style>
+
+</html>

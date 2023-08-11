@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành 1</title>
+</head>
+<body>
+    <div id="head">Head</div>
+    <div id="head-link">Head-Link</div>
+    <div id="main">
+        
+        <div id="left">Left</div>
+        <div id="center">Center</div>
+        <div id="right">Right</div>
+    </div>
+    <div id="footer">Footer</div>
+
+</body>
+<style>
+    #head,
+    #head-link,
+    #main,
+    #footer{
+        border: 3px solid black;
+        margin-bottom: 4px;
+    }
+    #main{
+        height: 100px;
+    }
+    #left{
+        height: 100%;
+        width: 200px    ;
+        float: left;
+        border: 1px solid black;
+    }
+    #right{
+        height: 100%;
+        width: 300px;
+        float: right;
+        border: 1px solid black;
+    }
+    #center{
+        border: 1px solid black;
+        height: 100%;
+        float: left;
+        width: calc(100% - 504px);
+        
+    }
+</style>
+</html>
