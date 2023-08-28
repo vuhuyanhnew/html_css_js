@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function removeFromArray(array, element){
+            //cách dùng splice
+            //muốn dùng phải tìm index
+            const index = array.findIndex(function(value){
+                return value ==element
+            })
+            if (index < 0) return array;
+            array.splice(index, 1);
+            return array
+            
+            // return array.filter(function(value){
+            //     return value != element;
+            // })
+        }
+        console.log(removeFromArray([1, 2, 3, 4], 3));
+    </script>
+</body>
+</html>

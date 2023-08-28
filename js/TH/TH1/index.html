@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        try {
+            let value1 = 'one'
+        let value2 = 'two'
+        console.log("value1: " + value1 + "  value2: " + value2 );
+    
+
+        let temp = "";
+        temp = value1;
+        value1 = value2;
+        value2 = temp;
+        console.log("value1: " + value1 + "  value2: " + value2 );
+            
+        } catch (error) {
+            console.log(error.name + "   " + error.message )
+        }
+        
+
+    </script>
+</body>
+</html>
