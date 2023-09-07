@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form">
+        <div>Đo chỉ số</div>
+        <div>
+            <label for="height">Chiều cao</label>
+            <input  id="height" name="height"></input>
+        </div>
+        <div>
+            <label for="weight">Cân nặng</label>
+            <input  id="weight" name="weight"></input>
+        </div>
+        <div> Giới tính</div>
+        <div>
+            <input type="radio" id="male" name="gender">Nam
+            <input type="radio" id="female" name="gender">Nữ
+        </div>
+        <button id="btnCal">Tính BMI</button>
+    </form>
+    <script>
+        const form = document.querySelector("#form")
+        form.addEventListener("submit", function (event) {
+            event.defaultPrevented();
+            const heightInput = form.elements("height")
+            const weightInput = form.elements("weight")
+            const genderInput = form.elements("gender")
+
+            const height = heightInput.value
+            const weight = weightInput.value
+            const gender = genderInput.value
+            if (!height || !weight || !gender) {
+                alert("Please enter your input")
+            }
+            let bmi =  weight / (height * height)
+            let result = ""
+            if(gender == "male"){
+                switch (true) {
+                case bmi < 20.7:
+                    result = "Gầy"
+                    break;
+                case bmi < 26.4:
+                    result = "Bình thường"
+                    break;
+                case bmi < 27.8:
+                    result = "thừa cân nhẹ"
+                    break;
+                case bmi < 31.1:
+                    result = "trên lí tưởng"
+                    break;
+                case bmi>31.1:
+                    result = "béo phì"
+                    break;
+            }
+            }
+            else if(gender == "female"){
+                switch (true) {
+                case bmi < 19.1:
+                    result = "Gầy"
+                    break;
+                case bmi < 25.8:
+                    result = "Bình thường"
+                    break;
+                case bmi < 27.3:
+                    result = "thừa cân nhẹ"
+                    break;
+                case bmi < 32.3:
+                    result = "trên lí tưởng"
+                    break;
+                case bmi>32.3:
+                    result = "béo phì"
+                    break;
+            }
+            }
+            
+
+        })
+    </script>
+</body>
+
+</html>

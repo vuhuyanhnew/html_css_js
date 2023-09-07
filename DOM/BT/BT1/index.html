@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div> Đo chỉ số (BMI)</div>
+        <div>Chiều cao</div>
+        <input id="height" type="number" placeholder="Tính theo m">
+        <div>Cân nặng</div>
+        <input id="weight" type="number" placeholder="Tính theo kg">
+        <div>Giới tính</div>
+        <input type="radio" id="male" name="gender">Nam
+        <input type="radio" id="female" name="gender">Nữ
+        <br>
+        <button id="btnCal">Tính BMI</button>
+        <div>Kết quả</div>
+        <div id="ketqua"></div>
+        <script>
+            const height = document.querySelector("#height")
+            const weight = document.querySelector("#weight")
+            const btnCal = document.querySelector("#btnCal")
+            const male = document.querySelector("#male")
+            const female = document.querySelector("#female")
+            const ketqua = document.querySelector("ketqua")
+            btnCal.addEventListener("click", function(){
+                if(height.value == "" || weight.value == ""){
+                    alert("Vui lòng nhập đầy đủ thông tin")
+                }
+                console.log(height.value + weight.value)
+                const result = weight.value / (height.value * height.value) 
+                console.log(result)
+                if(male.checked){
+                        if(result<19.1){
+                            ketqua.textContent = `result + " | " + "Khoẻ mạnh" `
+                        } else if (result>19.1) {
+                            ketqua.textContent = result + "bếu"
+                        }
+                }else if(female.checked){
+                    if(result<19.1){
+                            ketqua.textContent = result + " | " + "Khoẻ mạnh" 
+                        } else if (result>19.1) {
+                            ketqua.textContent = result + "bếu"
+                        }
+                }
+            })
+        </script>
+    </div>
+</body>
+</html>

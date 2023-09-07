@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <script src="script.js"></script>
-</body>
+  </head>
+  <body>
+    <h3>Todo list</h3>
+    <input id="input" type="text" placeholder="Enter todo" />
+    <button id="add">Add</button>
+    <ul id="container"></ul>
+  </body>
+  <script>
+    const container = document.querySelector("#container");
+
+    const btnAdd = document.querySelector("#add");
+    const input = document.querySelector("#input");
+
+    const todos = [];
+
+    btnAdd.addEventListener("click", function () {
+      // lấy giá trị của ô input
+      const value = input.value;
+
+      if (!value) return;
+
+      // Thêm giá trị đó lên UI
+      todos.push(value);
+
+      render();
+
+      input.value = null;
+    });
+
+    function render() {
+      const liElements = todos.map((todo) => {
+        return `<li>${todo}</li>`;
+      });
+
+      container.innerHTML = liElements.join("");
+    }
+
+    render();
+  </script>
 </html>

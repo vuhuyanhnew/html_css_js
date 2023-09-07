@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="keyboard" type="password">
+    
+    <button id="showpassword">Show Password</button>
+    <script>
+        const input= document.querySelector("#keyboard")
+        const btnShow = document.querySelector("#showpassword")
+        input.addEventListener("keydown", function(event){
+            const value = input.value;
+            console.log(event)
+        })
+        input.addEventListener("focus", function(event){
+            input.style.background = "yellow"
+            input.placeholder = "Searching...";
+
+            
+        })
+        input.addEventListener("blur", function(event) {
+            input.placeholder = "Type here...";
+            input.style.background = ""; 
+        });
+        btnShow.addEventListener("click", function(){
+            if(input.type == "password"){
+                input.type = "text"
+                btnShow.textContent = "Hide Password"
+            }else 
+            if (input.type == "text"){
+                input.type = "password"
+                btnShow.textContent = "Show Password"
+            }
+        })
+
+    </script>
+</body>
+</html>

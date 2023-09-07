@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Todo list</h1>
+    <input id="input" type="text" placeholder="todo" />
+    <button id="add">Add</button>
+    <ul id="container"></ul>
+</body>
+<script>
+
+    const toDo = []
+    const container = document.querySelector("#container")
+    const input = document.querySelector("#input");
+    const btnAdd = document.querySelector("#add")
+    btnAdd.addEventListener("click", function () {
+        const value = input.value
+        if (!value) return;
+        toDo.push(value);
+        render();
+        input.value = null;
+    })
+    function render() {
+      const liElements = toDo.map((todo) => {
+        return `<li>${todo}</li>`;
+      });
+
+      container.innerHTML = liElements.join("");
+    }
+
+    render();
+</script>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
+
+</html>

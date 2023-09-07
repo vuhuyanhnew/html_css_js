@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <button id="btnClick">Click me</button>
+        <p id="message"></p>
+        <button id="button">Click me</button>
+    </div>
+    <script>
+        const btnClick = document.querySelector("#btnClick")
+        const mess = document.querySelector("#message")
+        const button = document.querySelector("#button")
+        btnClick.addEventListener("click", function(){
+            alert('clicked');
+        })
+        button.addEventListener("mouseup", function(event) {
+            if (event.button === 0) {
+                message.textContent = "Left mouse button clicked.";
+            } else if (event.button == 2) {
+                event.preventDefault();
+                message.textContent = "Right mouse button clicked.";
+            } else if (event.button == 1) {
+                message.textContent = "Middle mouse button clicked.";
+            } else if (event.button == 3) {
+                message.textContent = "Third mouse button clicked.";
+            } else if (event.button == 4) {
+                message.textContent = "Fourth mouse button clicked.";
+            }
+        });
+    </script>
+</body>
+</html>
