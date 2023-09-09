@@ -39,31 +39,31 @@
                     console.log(height.value + weight.value);
                     const result = weightValue / (heightValue * heightValue);
                     console.log(result);
-
+                    
                     if (male.checked) {
                         if (result < 20.7) {
-                            ketqua.textContent = "Gầy";
+                            ketqua.textContent = result.toFixed(2) + " | " + "Gầy";
                         } else if (result >= 20.7 && result < 26.4) {
-                            ketqua.textContent = "Bình thường";
+                            ketqua.textContent = result.toFixed(2) + " | " + "Bình thường";
                         } else if (result >= 26.4 && result < 27.8) {
-                            ketqua.textContent = "Thừa cân nhẹ";
+                            ketqua.textContent = result.toFixed(2) + " | " + "Thừa cân nhẹ";
                         } else if (result >= 27.8 && result < 31.1) {
-                            ketqua.textContent = "Trên lý tưởng";
+                            ketqua.textContent = result.toFixed(2) + " | " + "Trên lý tưởng";
                         } else {
-                            ketqua.textContent = "Béo phì";
+                            ketqua.textContent = result.toFixed(2) + " | " + "Béo phì";
                         }
                     } else if (female.checked) {
                         if (result < 19.1) {
-                            ketqua.textContent = "Gầy";
+                            ketqua.textContent = result.toFixed(2) + " | " + "Gầy";
                         } else if (result >= 19.1 && result < 25.8) {
-                            ketqua.textContent = "Bình thường";
+                            ketqua.textContent = result.toFixed(2) + " | " + "Bình thường";
                         } else if (result >= 25.8 && result < 27.3) {
-                            ketqua.textContent = "Thừa cân nhẹ";
+                            ketqua.textContent = result.toFixed(2) + " | " + "Thừa cân nhẹ";
                         } else if (result >= 27.3 && result < 32.3) {
-                            ketqua.textContent = "Trên lý tưởng";
+                            ketqua.textContent = result.toFixed(2) + " | " + "Trên lý tưởng";
                         } else {
-                            ketqua.textContent = "Béo phì";
-                        } 
+                            ketqua.textContent = result + " | " + "Béo phì";
+                        }
                     }
 
 
