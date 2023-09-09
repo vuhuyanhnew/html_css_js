@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="container"></ul>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        let todos;
+        axios.get("https://jsonplaceholder.typicode.com/todos")
+            .then(function(response) {
+                todos = response.data;
+                render();
+            });
+        function render() {
+            const container = document.querySelector("#container");
+            const todoElement = todos.map((item) => `<li>${item.title}</li>`);
+            container.innerHTML = todoElement.join("");
+        }
+
+    </script>
+</body>
+
+</html>

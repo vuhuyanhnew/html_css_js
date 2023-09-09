@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input name="title">
+        <button type="submit" placeholder="Add new one">Add</button>
+        <ul id="container"></ul>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+        <script>
+            let todos;
+            function fetchData() {
+                axios.get("https://jsonplaceholder.typicode.com/todos")
+                    .then(function (response) {
+                        todos = response.data;
+                        render();
+                    });
+            }
+
+            function render() {
+                const container = document.querySelector("#container");
+                const todoElement = todos.map((item) => `<li>${item.title}</li>`);
+                container.innerHTML = todoElement.join("");
+            }
+            fetchData();
+
+            const form = document.querySelector("#form")
+            form.addEventListener('submit', function (event) {
+                event.preventDefault;
+                const input = form.elements['title']
+                const value = input.value;
+                if (!value) return;
+
+                axios.post("ttps://jsonplaceholder.typicode.com/todos", {
+                    "userId": 1,
+                    "title": value,
+                    "completed": false
+                }).then(function (response) {
+                    if (response.status == 201) {
+
+                    }
+                });
+            });
+        </script>
+
+    </form>
+</body>
+
+</html>

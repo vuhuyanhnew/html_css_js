@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div class="container">
         <div> Đo chỉ số (BMI)</div>
         <div>Chiều cao</div>
-        <input id="height" type="number" placeholder="Tính theo m">
+        <input id="height" type="text" placeholder="Tính theo m">
         <div>Cân nặng</div>
-        <input id="weight" type="number" placeholder="Tính theo kg">
+        <input id="weight" type="text" placeholder="Tính theo kg">
         <div>Giới tính</div>
         <input type="radio" id="male" name="gender">Nam
         <input type="radio" id="female" name="gender">Nữ
@@ -20,34 +22,55 @@
         <div>Kết quả</div>
         <div id="ketqua"></div>
         <script>
-            const height = document.querySelector("#height")
-            const weight = document.querySelector("#weight")
-            const btnCal = document.querySelector("#btnCal")
-            const male = document.querySelector("#male")
-            const female = document.querySelector("#female")
-            const ketqua = document.querySelector("ketqua")
-            btnCal.addEventListener("click", function(){
-                if(height.value == "" || weight.value == ""){
-                    alert("Vui lòng nhập đầy đủ thông tin")
-                }
-                console.log(height.value + weight.value)
-                const result = weight.value / (height.value * height.value) 
-                console.log(result)
-                if(male.checked){
-                        if(result<19.1){
-                            ketqua.textContent = `result + " | " + "Khoẻ mạnh" `
-                        } else if (result>19.1) {
-                            ketqua.textContent = result + "bếu"
+            const height = document.querySelector("#height");
+            const weight = document.querySelector("#weight");
+            const btnCal = document.querySelector("#btnCal");
+            const male = document.querySelector("#male");
+            const female = document.querySelector("#female");
+            const ketqua = document.querySelector("#ketqua");
+
+            btnCal.addEventListener("click", function () {
+                if (height.value == "" || weight.value == "") {
+                    alert("Vui lòng nhập đầy đủ thông tin");
+                } else {
+                    const heightValue = parseFloat(height.value);
+                    const weightValue = parseFloat(weight.value);
+
+                    console.log(height.value + weight.value);
+                    const result = weightValue / (heightValue * heightValue);
+                    console.log(result);
+
+                    if (male.checked) {
+                        if (result < 20.7) {
+                            ketqua.textContent = "Gầy";
+                        } else if (result >= 20.7 && result < 26.4) {
+                            ketqua.textContent = "Bình thường";
+                        } else if (result >= 26.4 && result < 27.8) {
+                            ketqua.textContent = "Thừa cân nhẹ";
+                        } else if (result >= 27.8 && result < 31.1) {
+                            ketqua.textContent = "Trên lý tưởng";
+                        } else {
+                            ketqua.textContent = "Béo phì";
                         }
-                }else if(female.checked){
-                    if(result<19.1){
-                            ketqua.textContent = result + " | " + "Khoẻ mạnh" 
-                        } else if (result>19.1) {
-                            ketqua.textContent = result + "bếu"
-                        }
+                    } else if (female.checked) {
+                        if (result < 19.1) {
+                            ketqua.textContent = "Gầy";
+                        } else if (result >= 19.1 && result < 25.8) {
+                            ketqua.textContent = "Bình thường";
+                        } else if (result >= 25.8 && result < 27.3) {
+                            ketqua.textContent = "Thừa cân nhẹ";
+                        } else if (result >= 27.3 && result < 32.3) {
+                            ketqua.textContent = "Trên lý tưởng";
+                        } else {
+                            ketqua.textContent = "Béo phì";
+                        } 
+                    }
+
+
                 }
-            })
+            });
         </script>
     </div>
 </body>
+
 </html>
