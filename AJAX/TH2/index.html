@@ -8,16 +8,23 @@
 </head>
 
 <body>
-    <form>
+    <form id="form">
         <input name="title">
         <button type="submit" placeholder="Add new one">Add</button>
         <ul id="container"></ul>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        
+    </form>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
         <script>
             let todos;
             function fetchData() {
-                axios.get("https://jsonplaceholder.typicode.com/todos")
+                axios.get("https://jsonplaceholder.typicode.com/todos", {
+                    params: {
+                        _page: 1,
+                        _limit: 10,
+                    },
+                })
                     .then(function (response) {
                         todos = response.data;
                         render();
@@ -38,7 +45,7 @@
                 const value = input.value;
                 if (!value) return;
 
-                axios.post("ttps://jsonplaceholder.typicode.com/todos", {
+                axios.post("https://jsonplaceholder.typicode.com/todos", {
                     "userId": 1,
                     "title": value,
                     "completed": false
@@ -49,8 +56,6 @@
                 });
             });
         </script>
-
-    </form>
 </body>
 
 </html>

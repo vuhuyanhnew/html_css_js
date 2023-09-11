@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="div-container">
+        <div class="pic-pokemon"></div>
+        <div class="list-pokemon">
+            <ul id="container">
+
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        let list = []
+        axios.get("https://pokeapi.co/api/v2/pokemon/")
+            .then(function (response) {
+                console.log(response)
+                list = response.data.results
+                render();
+            })
+
+        function render() {
+            const container = document.querySelector("#container");
+            const listElement = list.map((item) => {
+                const listItem = document.createElement('li');
+                const button = document.createElement('button');
+                button.className = 'showPokemon';
+                button.textContent = item.name;
+                listItem.appendChild(button);
+                return listItem;
+            });
+            container.innerHTML = "";
+            listElement.forEach((element) => {
+                container.appendChild(element);
+            });
+            const btnShow = document.querySelectorAll(".showPokemon")
+
+            btnShow.forEach((button) => {
+                button.addEventListener("click", function () {
+                    let url = list.find(pokemon => pokemon.name === button.textContent).url;
+                    fetchImage(url);
+                });
+            });
+
+        }
+        const fetchImage = (url) => {
+            axios.get(url).then(function (response) {
+                const picPokemon = document.querySelector(".pic-pokemon")
+                picPokemon.innerHTML = "";
+                let img = response.data.sprites.front_default
+                let type = response.data.type.name
+                console.log(response.data)
+                const imageElement = document.createElement('img');
+                imageElement.src = img;
+                picPokemon.appendChild(imageElement);
+            })
+        }
+    </script>
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    .div-container {
+        border: 7px solid gray;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 700px;
+        width: 700px;
+        margin: 10% 0px 0px 29%;
+        border-radius: 2%;
+
+    }
+
+    .pic-pokemon {
+        flex: 1;
+        height: 100%;
+    }
+
+    .list-pokemon {
+        flex: 1;
+    }
+
+    img {
+        height: 50%;
+    }
+    button{
+        text-transform: uppercase;
+        background-color: white;
+        border-radius: 8%;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 23px;
+    }
+</style>
+
+</html>
