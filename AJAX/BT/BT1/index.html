@@ -58,11 +58,16 @@
                 picPokemon.innerHTML = "";
                 console.log(response.data)
                 let img = response.data.sprites.front_default
+                let type = response.data.type
+                console.log(type)
                 const imageElement = document.createElement('img');
                 imageElement.src = img;
                 picPokemon.appendChild(imageElement);
             })
         }
+        console.log(my)
+        let my = 10
+        
     </script>
 </body>
 <style>
@@ -84,7 +89,7 @@
         align-items: center;
         height: 700px;
         width: 700px;
-        margin: 10% 0px 0px 29%;
+        margin: 5% 0px 0px 29%;
         border-radius: 2%;
 
     }

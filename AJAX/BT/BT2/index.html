@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div align="center">Menu</div>
+    <div id="container">
+        <div id="menu-container"></div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        let list = []
+        axios.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood")
+            .then((response) => {
+                console.log(response)
+                list = response.data.meals
+                render();
+            })
+        function render() {
+            console.log(list)
+            const menu = document.querySelector("#menu-container")
+            const listElement = list.map((item) => {
+                const listItem = document.createElement("div")
+                const listPic = document.createElement("img")
+                const listName = document.createElement("label")
+
+                listPic.src = item.strMealThumb
+                listName.textContent = item.strMeal
+                listItem.appendChild(listPic)
+                listItem.appendChild(listName)
+                menu.appendChild(listItem)
+            })
+
+        }
+    </script>
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    #container {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    img {
+        height: 100px;
+    }
+</style>
+
+</html>
