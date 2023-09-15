@@ -28,7 +28,7 @@
                 const listItem = document.createElement("div")
                 const listPic = document.createElement("img")
                 const listName = document.createElement("label")
-
+                listItem.classList = "food"
                 listPic.src = item.strMealThumb
                 listName.textContent = item.strMeal
                 listItem.appendChild(listPic)
@@ -54,6 +54,13 @@
 
     img {
         height: 100px;
+        margin-right: 5%;
+    }
+    .food{
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        
     }
 </style>
 
