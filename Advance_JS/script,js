@@ -1,0 +1,37 @@
+let happyHanding = (message) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(message == 'Yes'){
+                resolve('Em Dong Y')
+            } else{
+                reject(new Error('Khong Dong Y'))
+            }
+
+        }, 5000)
+    })
+}
+happyHanding('Yes').then(result => {
+    console.log(result)
+})
+
+let happyHandingAsync = async (message) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (message == 'Yes') {
+          resolve('Em Dong Y');
+        } else {
+          reject(new Error('Khong Dong Y'));
+        }
+      }, 5000);
+    });
+  };
+  
+  (async () => {
+    try {
+      const result = await happyHandingAsync('Yes');
+      console.log(result);
+    } catch (error) {
+      console.error(error.message);
+    }
+  })();
+  
