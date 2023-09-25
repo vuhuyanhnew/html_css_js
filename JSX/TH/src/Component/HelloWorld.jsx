@@ -1,4 +1,4 @@
-export function HelloWorld() {
+function HelloWorld() {
     let name = "Huy"
     const human = {
         name: "Anh",

@@ -15,6 +15,15 @@ function App() {
   const handleIncreaseAge = () => {
     setAge(age + 1);
   }
+  const [userInput, setUserInput] = useState("");
+
+  const handleInputChange = (e) => {
+    setUserInput(e.target.value);
+  };
+
+  const handleButtonClick = (e) => {
+    alert(userInput);
+  };
   return (
     <>
       <h3>TH1</h3>
@@ -25,6 +34,14 @@ function App() {
       <h3>TH3</h3>
       <button onClick={handleIncreaseAge}>Tăng 1 tuổi</button>
       <DemoComponent age={age} displayName={name} />
+      <h3>TH4</h3>
+      <input
+        type="text"
+        name="user"
+        placeholder="Please type somthing"
+        onChange={handleInputChange}
+      />
+      <button onClick={handleButtonClick}>Print</button>
     </>
   );
 }
