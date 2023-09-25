@@ -24,19 +24,19 @@ class ToDoList {
         }
     }
 }
-const todoList = new ToDoList();
+const todoList = new ToDoList([]);
 
 const todo1 = new ToDo("2023-09-15");
 todo1.addWork("work A");
 todo1.addWork("work B");
 
 const todo2 = new ToDo("2023-09-16");
-todo1.addWork("work C");
-todo1.addWork("work E");
+todo2.addWork("work C");
+todo2.addWork("work E");
 
 const todo3 = new ToDo("2023-09-16");
-todo1.addWork("work F");
-todo1.addWork("work G");
+todo3.addWork("work F");
+todo3.addWork("work G");
 todoList.addToDo(todo1)
 todoList.addToDo(todo2)
 console.log(todoList)
