@@ -1,0 +1,16 @@
+
+.container {
+    display: grid;
+    grid-template-columns: 30% 70%; 
+  }
+  
+  .leftEle {
+    background-color: blue;
+    width: 100%;
+  }
+  
+  .rightEle {
+    background-color: red;
+    width: 100%;
+  }
+  
