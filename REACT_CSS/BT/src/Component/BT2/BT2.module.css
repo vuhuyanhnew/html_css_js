@@ -2,3 +2,10 @@ button{
     background-color: white;
     color: black;
 }
+
+.redDiv{
+    background-color: red;
+}
+.blueDiv{
+    background-color: blue;
+}
