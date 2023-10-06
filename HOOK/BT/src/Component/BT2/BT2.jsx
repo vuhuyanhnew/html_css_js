@@ -15,7 +15,7 @@ export default function BT2() {
     return (
         <div>
             <h4>Thời gian hiện tại sau 5 giây:</h4>
-            <p>{time}</p>
+            <div>{time}</div>
         </div>
     );
 }
