@@ -10,7 +10,7 @@ const schema = yup.object().shape({
     symptoms: yup.object().shape({
         fever: yup.boolean(),
         cough: yup.boolean(),
-        shortnessOfBreath: yup.boolean(),
+        breathless: yup.boolean(),
     }),
 });
 
@@ -98,7 +98,7 @@ const BT1 = () => {
                 <div>
                     <label>
                         <Controller
-                            name="symptoms.shortnessOfBreath"
+                            name="symptoms.breathless"
                             control={control}
                             render={({ field }) => (
                                 <>
@@ -109,7 +109,7 @@ const BT1 = () => {
                         />
                     </label>
                 </div>
-                {/* Thêm các triệu chứng khác tại đây */}
+        
             </div>
             <button type="submit">Gửi</button>
         </form>
