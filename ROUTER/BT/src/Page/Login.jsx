@@ -1,10 +1,18 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
 const Login = () =>{
+    
+    
     const navigate = useNavigate();
+    const isLogin = localStorage.getItem("isLogin") == "true"
+    if(isLogin){
+        return <Navigate to="/"></Navigate>
+    }
     const handleClick = () =>{
+        localStorage.setItem("isLogin", true)
         navigate("/")
     }
+    
 return(
     <>
     <div>Username</div>
@@ -12,8 +20,8 @@ return(
     <br/>
     <div>Password</div>
     <input></input>
-
-    <button onClick={handleClick}></button>
+    <br/>
+    <button onClick={handleClick}>Login</button>
     <br/>
     </>
 )

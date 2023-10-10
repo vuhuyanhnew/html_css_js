@@ -1,8 +1,13 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 
 const Home = () => {
+    
     const navigate = useNavigate();
     const isAdmin = true
+    const isLogin = localStorage.getItem("isLogin") == "true"
+    if(!isLogin){
+        return <Navigate to="/login"></Navigate>
+    }
     const handleClick = (productId) => {
         if (isAdmin) {
             navigate(`/product/${productId}`);
@@ -11,7 +16,7 @@ const Home = () => {
                 navigate('/');
         }
     };
-
+    
     return (
         <>
             <div onClick={() => handleClick(1)}>Sản phẩm 1</div>

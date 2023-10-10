@@ -3,6 +3,8 @@ import HomePage from './Component/HomePage.jsx'
 import PrivateGroup from './Component/PrivateGroup.jsx';
 import { Outlet } from 'react-router-dom';
 
+
+    
 const router = createBrowserRouter([
     {
       path: "/",
