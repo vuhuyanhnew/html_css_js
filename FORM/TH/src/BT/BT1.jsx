@@ -5,13 +5,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 const schema = yup.object().shape({
     name: yup.string().required("Name required"),
     address: yup.string().required("Address required"),
-    phone: yup.string().required("Phone number required"),
+    phone: yup.number().required("Phone number required").integer("must be integer"),
     email: yup.string().email("Invalid Email").required("Email required"),
-    symptoms: yup.object().shape({
-        fever: yup.boolean(),
-        cough: yup.boolean(),
-        breathless: yup.boolean(),
-    }),
+    
 });
 
 const BT1 = () => {
