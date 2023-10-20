@@ -1,11 +1,14 @@
-import Product from "./Page/Product"
 
+
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router'
 
 function App() {
 
   return (
     <>
-      <Product />
+        <RouterProvider router={router}></RouterProvider>
+
     </>
   )
 }

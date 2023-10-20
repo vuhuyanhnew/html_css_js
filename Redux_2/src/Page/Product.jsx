@@ -45,7 +45,7 @@ export default function Product() {
                 <option value="yellow">Vàng</option>
                 <option value="pink">Hồng</option>
               </select>
-            )}
+            )} 
           />
           <div>Mô tả</div>
           <Controller
@@ -55,51 +55,51 @@ export default function Product() {
             render={({ field }) => <textarea rows="4" className='input' {...field} />}
           />
 
-<label>Trong vòng 14 ngày qua, bạn có dấu hiệu triệu chứng gì?</label>
-                <div>
-                    <label>
-                        <Controller
-                            name="symptoms.fever"
-                            control={control}
-                            render={({ field }) => (
-                                <>
-                                    <input {...field} type="checkbox" />
-                                    Sốt
-                                </>
-                            )}
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <Controller
-                            name="symptoms.cough"
-                            control={control}
-                            render={({ field }) => (
-                                <>
-                                    <input {...field} type="checkbox" />
-                                    Ho
-                                </>
-                            )}
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <Controller
-                            name="symptoms.breathless"
-                            control={control}
-                            render={({ field }) => (
-                                <>
-                                    <input {...field} type="checkbox" />
-                                    Khó thở
-                                </>
-                            )}
-                        />
-                    </label>
-                </div>
+          <label>Trong vòng 14 ngày qua, bạn có dấu hiệu triệu chứng gì?</label>
+          <div>
+            <label>
+              <Controller
+                name="symptoms.fever"
+                control={control}
+                render={({ field }) => (
+                  <>
+                    <input {...field} type="checkbox" />
+                    Sốt
+                  </>
+                )}
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              <Controller
+                name="symptoms.cough"
+                control={control}
+                render={({ field }) => (
+                  <>
+                    <input {...field} type="checkbox" />
+                    Ho
+                  </>
+                )}
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              <Controller
+                name="symptoms.breathless"
+                control={control}
+                render={({ field }) => (
+                  <>
+                    <input {...field} type="checkbox" />
+                    Khó thở
+                  </>
+                )}
+              />
+            </label>
+          </div>
           <button type="submit" className='btnSubmit'>Thêm</button>
-          
+
         </form>
       </div>
 
@@ -107,7 +107,7 @@ export default function Product() {
         <div className='title'>List sản phẩm</div>
         {products?.products.map((e, i) => (
           <div key={i} className='item'>
-            <div> {e?.name} - {e?.price} - {e?.color}</div>
+            <div> {e?.name} - {e?.price} - {e?.color.toString()}</div>
             <div>{e?.description}</div>
           </div>
         ))}

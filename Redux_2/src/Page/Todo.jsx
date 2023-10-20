@@ -1,6 +1,8 @@
 import { Controller, useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, deleteTodo } from "../Store/reducers/todo"; 
+import { addTodo, deleteTodo, fetchTodos } from "../Store/reducers/todo";
+import { useEffect } from "react";
+
 
 const Todo = () => {
   const { control, handleSubmit } = useForm({
@@ -11,16 +13,18 @@ const Todo = () => {
 
   const dispatch = useDispatch();
   const todoStore = useSelector((state) => state.todo);
-
   const onSubmit = (values) => {
     dispatch(addTodo(values));
   };
 
   const handleDelete = (index) => {
-    // Gọi action Redux để xoá công việc
     dispatch(deleteTodo(index));
   };
 
+  useEffect(() => {
+    dispatch(fetchTodos());
+  }, []);
+  console.log(todoStore)
   return (
     <div>
       <h2>Todo App</h2>
@@ -28,7 +32,7 @@ const Todo = () => {
         <Controller
           name="todoName"
           control={control}
-          render={(field) => (
+          render={({ field }) => (
             <input {...field} type="text" placeholder="Enter code" />
           )}
         />
@@ -43,6 +47,8 @@ const Todo = () => {
           </li>
         ))}
       </ul>
+      
+
     </div>
   );
 };
